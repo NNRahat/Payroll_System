@@ -8,9 +8,6 @@
       <Point value="[600, 250]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
-    <Property name="type" type="java.awt.Window$Type" editor="org.netbeans.modules.form.editors.EnumEditor">
-      <Value id="UTILITY"/>
-    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -57,7 +54,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -69,6 +66,7 @@
                       <Component id="Salary_l" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="Address_l" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="email_l" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="37" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -76,16 +74,15 @@
                           <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
                           <Component id="Back" min="-2" pref="109" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="phonetxt" alignment="0" max="32767" attributes="0"/>
-                          <Component id="emailtxt" alignment="0" max="32767" attributes="0"/>
-                          <Component id="genderdropdown" alignment="0" max="32767" attributes="0"/>
-                          <Component id="sectortxt" alignment="0" max="32767" attributes="0"/>
-                          <Component id="salarytxt" alignment="0" max="32767" attributes="0"/>
-                          <Component id="nametxt" alignment="1" max="32767" attributes="0"/>
-                          <Component id="addresstxt" alignment="0" max="32767" attributes="0"/>
-                          <Component id="idtxt" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="phonetxt" alignment="0" max="32767" attributes="0"/>
+                      <Component id="emailtxt" alignment="0" max="32767" attributes="0"/>
+                      <Component id="genderdropdown" alignment="0" max="32767" attributes="0"/>
+                      <Component id="sectortxt" alignment="0" max="32767" attributes="0"/>
+                      <Component id="salarytxt" alignment="0" max="32767" attributes="0"/>
+                      <Component id="nametxt" alignment="1" max="32767" attributes="0"/>
+                      <Component id="addresstxt" alignment="0" max="32767" attributes="0"/>
+                      <Component id="idtxt" alignment="0" max="32767" attributes="0"/>
+                      <Component id="paymentBar" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
@@ -134,12 +131,17 @@
                       <Component id="phone_l" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="phonetxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="paymentBar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Save" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="Back" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -288,6 +290,30 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="genderdropdownActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Payment"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="paymentBar">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="Paid"/>
+                <StringItem index="1" value="Not paid"/>
+              </StringArray>
+            </Property>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>

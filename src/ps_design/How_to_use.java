@@ -36,7 +36,6 @@ public class How_to_use extends javax.swing.JFrame {
         setTitle("How-to-use");
         setLocation(new java.awt.Point(450, 250));
         setResizable(false);
-        setType(java.awt.Window.Type.UTILITY);
 
         jPanel1.setBackground(new java.awt.Color(51, 0, 102));
 

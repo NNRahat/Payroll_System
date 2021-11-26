@@ -54,12 +54,13 @@ public class insert extends javax.swing.JFrame {
         Address_l = new javax.swing.JLabel();
         addresstxt = new javax.swing.JTextField();
         genderdropdown = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        paymentBar = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Insert");
         setLocation(new java.awt.Point(600, 250));
         setResizable(false);
-        setType(java.awt.Window.Type.UTILITY);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -131,6 +132,12 @@ public class insert extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Payment");
+
+        paymentBar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paid", "Not paid" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -146,21 +153,22 @@ public class insert extends javax.swing.JFrame {
                     .addComponent(Sector_l)
                     .addComponent(Salary_l)
                     .addComponent(Address_l)
-                    .addComponent(email_l))
+                    .addComponent(email_l)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(phonetxt, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(emailtxt, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(genderdropdown, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sectortxt, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(salarytxt, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(nametxt)
-                        .addComponent(addresstxt, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(idtxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(phonetxt)
+                    .addComponent(emailtxt)
+                    .addComponent(genderdropdown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sectortxt)
+                    .addComponent(salarytxt)
+                    .addComponent(nametxt, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(addresstxt)
+                    .addComponent(idtxt)
+                    .addComponent(paymentBar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(50, 50, 50))
         );
         jPanel1Layout.setVerticalGroup(
@@ -198,11 +206,15 @@ public class insert extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(phone_l)
                     .addComponent(phonetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(paymentBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -229,8 +241,9 @@ public class insert extends javax.swing.JFrame {
         String address = addresstxt.getText();
         String email = emailtxt.getText();
         String phone = phonetxt.getText();
+        String payment = (String) paymentBar.getSelectedItem();
 
-        String sql = "INSERT INTO employee(ID,Name, Sector, Salary, Gender, Address, Email,Phone) VALUES('"+id+"','"+name+"','"+sector+"','"+salary+"','"+gender+"','"+address+"','"+email+"','"+phone+"')";
+        String sql = "INSERT INTO employee(ID,Name, Sector, Salary, Gender, Address, Email,Phone,Payment) VALUES('"+id+"','"+name+"','"+sector+"','"+salary+"','"+gender+"','"+address+"','"+email+"','"+phone+"','"+payment+"')";
         try {
 
             stmt = conn.createStatement();
@@ -324,8 +337,10 @@ public class insert extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> genderdropdown;
     private javax.swing.JTextField idtxt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nametxt;
+    private javax.swing.JComboBox<String> paymentBar;
     private javax.swing.JLabel phone_l;
     private javax.swing.JTextField phonetxt;
     private javax.swing.JTextField salarytxt;

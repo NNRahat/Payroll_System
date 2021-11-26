@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ps_design;
 
 import java.awt.Toolkit;
@@ -16,9 +11,6 @@ import java.awt.event.WindowEvent;
  */
 public class Mainpage extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Mainpage
-     */
     public Mainpage() {
         initComponents();
     }
@@ -46,7 +38,6 @@ public class Mainpage extends javax.swing.JFrame {
         setTitle("Payroll System");
         setLocation(new java.awt.Point(700, 250));
         setResizable(false);
-        setType(java.awt.Window.Type.UTILITY);
 
         jPanel2.setBackground(new java.awt.Color(51, 0, 102));
 

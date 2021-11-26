@@ -37,7 +37,6 @@ public class About_us extends javax.swing.JFrame {
         setBackground(new java.awt.Color(51, 0, 102));
         setLocation(new java.awt.Point(450, 250));
         setResizable(false);
-        setType(java.awt.Window.Type.UTILITY);
 
         jPanel1.setBackground(new java.awt.Color(51, 0, 102));
 

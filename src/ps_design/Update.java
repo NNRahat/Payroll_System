@@ -95,12 +95,13 @@ public class Update extends javax.swing.JFrame {
         addresstxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Delete = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        paymentBar = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Update");
         setLocation(new java.awt.Point(600, 250));
         setResizable(false);
-        setType(java.awt.Window.Type.UTILITY);
 
         jPanel1.setBackground(new java.awt.Color(51, 0, 102));
 
@@ -198,6 +199,12 @@ public class Update extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Payment");
+
+        paymentBar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paid", "Not paid" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -210,10 +217,11 @@ public class Update extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel6)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
-                    .addComponent(Update))
+                    .addComponent(Update)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel9))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,7 +240,8 @@ public class Update extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(Delete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(paymentBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50))
         );
         jPanel1Layout.setVerticalGroup(
@@ -273,10 +282,14 @@ public class Update extends javax.swing.JFrame {
                     .addComponent(phonetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(paymentBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -309,7 +322,9 @@ public class Update extends javax.swing.JFrame {
             String address = addresstxt.getText();
             String email = emailtxt.getText();
             String phone = phonetxt.getText();
-            String qry = "update employee set Name='"+name+"',Sector='"+sector+"',Salary='"+salary+"',Gender='"+gender+"',Address='"+address+"',Email='"+email+"',Phone='"+phone+"'   where ID="+iddrop.getSelectedItem();
+            String payment = (String) paymentBar.getSelectedItem();
+            
+            String qry = "update employee set Name='"+name+"',Sector='"+sector+"',Salary='"+salary+"',Gender='"+gender+"',Address='"+address+"',Email='"+email+"',Phone='"+phone+"',Payment='"+payment+"'   where ID="+iddrop.getSelectedItem();
        
             try{
                 conn c1 = new conn();
@@ -416,8 +431,10 @@ public class Update extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nametxt;
+    private javax.swing.JComboBox<String> paymentBar;
     private javax.swing.JTextField phonetxt;
     private javax.swing.JTextField salarytxt;
     private javax.swing.JTextField sectortxt;

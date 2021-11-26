@@ -35,7 +35,6 @@ public class List extends javax.swing.JFrame {
         setTitle("List");
         setLocation(new java.awt.Point(600, 250));
         setResizable(false);
-        setType(java.awt.Window.Type.UTILITY);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -50,11 +49,11 @@ public class List extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Name", "Sector", "Salary", "Gender", "Address", "Email", "Phone"
+                "ID", "Name", "Sector", "Salary", "Gender", "Address", "Email", "Phone", "Payment_info"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -227,8 +226,10 @@ public class List extends javax.swing.JFrame {
                String address = rs.getString("Address");
                String email = rs.getString("Email");
                String phone = rs.getString("Phone");
+               String payment = rs.getString("Payment");
                
-               Object[] row = { id, name,sector, salary, gender, address, email, phone};
+               
+               Object[] row = { id, name,sector, salary, gender, address, email, phone,payment};
                // Insert value to jtable row and column
                model.addRow(row);
            }
