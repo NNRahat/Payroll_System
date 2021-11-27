@@ -1,9 +1,18 @@
 package ps_design;
 
+import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -11,6 +20,10 @@ import java.awt.event.WindowEvent;
  */
 public class Mainpage extends javax.swing.JFrame {
 
+    Connection conn;
+    Statement s;
+    PreparedStatement pst;
+    ResultSet rs;
     public Mainpage() {
         initComponents();
     }
@@ -173,17 +186,33 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-        String password = Usernametxt.getText();
-        String username = Passwordtxt.getText();
+        String un =Usernametxt.getText();
+        String p= Passwordtxt.getText();
         
-        if(password.contains("admin") && username.contains("admin") ){
-            new List().setVisible(true);
-            this.setVisible(false);
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/project_payroll","root","");
+            Statement st=conn.createStatement();
+            String sql="select * from security";
+            ResultSet rs= st.executeQuery(sql);
+           while(rs.next()){
+               
+               String username=rs.getString("Username");
+               String password=rs.getString("Password");
+               
+               if(un.equals(username) && p.equals(password)){
+               new List().setVisible(true);
+            
+               }
+               else{
+               JOptionPane.showMessageDialog(this, "Wrong Username & Password");
+               }
+            }
         }
-        else{
-            JOptionPane.showMessageDialog(null,"Wrong username or password!!!!","INSERT",JOptionPane.WARNING_MESSAGE);
-            Usernametxt.setText("");
-            Passwordtxt.setText("");
+        catch(  HeadlessException | SQLException e){
+        JOptionPane.showMessageDialog(null, "error while establish connection");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Mainpage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_loginActionPerformed
 

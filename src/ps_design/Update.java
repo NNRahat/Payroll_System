@@ -315,7 +315,7 @@ public class Update extends javax.swing.JFrame {
     }//GEN-LAST:event_UpdateStateChanged
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
-        String name = nametxt.getText();
+            String name = nametxt.getText();
             String sector = sectortxt.getText();
             String salary = salarytxt.getText();
             String gender = (String) genderdrop.getSelectedItem();
