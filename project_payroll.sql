@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2021 at 03:01 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Generation Time: Nov 27, 2021 at 06:22 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,21 +35,41 @@ CREATE TABLE `employee` (
   `Gender` varchar(8) NOT NULL,
   `Address` varchar(50) NOT NULL,
   `Email` varchar(40) NOT NULL,
-  `Phone` varchar(15) NOT NULL
+  `Phone` varchar(15) NOT NULL,
+  `Payment` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`ID`, `Name`, `Sector`, `Salary`, `Gender`, `Address`, `Email`, `Phone`) VALUES
-(2, 'Nurnabi Rahat', 'software developer', '10000', 'Male', 'chilttagong', 'rahat@gmail.com', '018********'),
-(4, 'Pottoy Das', 'web developer', '15000', 'Male', 'chittagong', 'prottoy@gmil.com', '018********'),
-(5, 'Abed Hossen Shymon', 'web developer', '15000', 'Male', 'Chittagong', 'abed@gmail.com', '018********'),
-(6, 'tanvir alam', 'networking', '30000', 'Male', 'chittgong', 'tanvir@gmail.com', '017********'),
-(13, 'Atef Abrar Bhuiyan', 'Web developer', '23000', 'Male', 'Dhaka', 'atef@gmail.com', '018********'),
-(7001, 'Safiullah', 'Web developer', '20000', 'Male', 'Kuyaish', 'Safi@gmail.com', '018********'),
-(5555984, 'Md. Muhtadir Rahman', 'Teaching', '28000', 'Male', 'Khulshi, Chittagong', 'muhtadirrahman@gmail.com', '01811350997');
+INSERT INTO `employee` (`ID`, `Name`, `Sector`, `Salary`, `Gender`, `Address`, `Email`, `Phone`, `Payment`) VALUES
+(2, 'Nurnabi Rahat', 'software developer', '10000', 'Male', 'chilttagong', 'rahat@gmail.com', '018********', 'Paid'),
+(4, 'Pottoy Das', 'web developer', '15000', 'Male', 'chittagong', 'prottoy@gmil.com', '018********', 'Paid'),
+(5, 'Abed Hossen Shymon', 'web developer', '15000', 'Male', 'Chittagong', 'abed@gmail.com', '018********', 'Paid'),
+(6, 'tanvir alam', 'networking', '30000', 'Male', 'chittgong', 'tanvir@gmail.com', '017********', 'Paid'),
+(423, 'Jhonny', 'Networking', '30000', 'Male', 'GEC', 'jhonny@gmail.com', '018********', 'Not paid'),
+(556, 'gale', 'web developer', '20000', 'Male', 'GEC', 'gale@gmail.com', '018********', 'Not paid'),
+(7001, 'Safiullah', 'Web developer', '20000', 'Male', 'Kuyaish', 'Safi@gmail.com', '018********', 'Paid'),
+(5555984, 'Md. Muhtadir Rahman', 'Teaching', '28000', 'Male', 'Khulshi, Chittagong', 'muhtadirrahman@gmail.com', '01811350997', 'Paid');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `security`
+--
+
+CREATE TABLE `security` (
+  `Username` varchar(30) NOT NULL,
+  `Password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `security`
+--
+
+INSERT INTO `security` (`Username`, `Password`) VALUES
+('admin', 'admin');
 
 --
 -- Indexes for dumped tables

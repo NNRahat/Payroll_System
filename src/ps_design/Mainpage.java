@@ -202,7 +202,7 @@ public class Mainpage extends javax.swing.JFrame {
                
                if(un.equals(username) && p.equals(password)){
                new List().setVisible(true);
-            
+               this.setVisible(false);
                }
                else{
                JOptionPane.showMessageDialog(this, "Wrong Username & Password");

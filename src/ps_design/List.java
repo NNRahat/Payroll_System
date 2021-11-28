@@ -60,6 +60,7 @@ public class List extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable);
         if (jTable.getColumnModel().getColumnCount() > 0) {
             jTable.getColumnModel().getColumn(0).setMinWidth(30);
