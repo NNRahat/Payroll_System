@@ -8,7 +8,7 @@ is guaranteed the access.
 The purpose of this project is to reduce the manual work.
 </p>
 
-<p>#If you want to download this project then just Clone the project or download as zip(Extract the file if you downloaded zip).
+<p>#If you want to download this project then just <b>Clone</b> the project or download as <b>zip</b>(Extract the file if you downloaded <b>zip</b>).
   
    ~Import the files in a java IDE.
    
