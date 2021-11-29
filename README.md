@@ -1,5 +1,5 @@
 # Payroll_System
-<p>Payroll system is a software in which the information of the employees,
+<p><b>Payroll system</b> is a software in which the information of the employees,
 their salary and their payment are stored. 
 
 The project is totally built at administrative end and thus only the administrator 
