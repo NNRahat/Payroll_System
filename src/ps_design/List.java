@@ -241,17 +241,10 @@ public class List extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
-        // TODO add your handling code here:
-         // TODO add your handling code here:
-        // Get ID from jtable
         int row = jTable.getSelectedRow();
-        // .getValueAt(row, column) so we are going to get the row and the ID column w/c is 0
         String id = jTable.getModel().getValueAt(row, 0).toString();
-
         View v = new View();
-        // set view public id
         v.id = id;
-        // open view form and close dashboard
         v.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_viewActionPerformed

@@ -243,7 +243,8 @@ public class insert extends javax.swing.JFrame {
         String phone = phonetxt.getText();
         String payment = (String) paymentBar.getSelectedItem();
 
-        String sql = "INSERT INTO employee(ID,Name, Sector, Salary, Gender, Address, Email,Phone,Payment) VALUES('"+id+"','"+name+"','"+sector+"','"+salary+"','"+gender+"','"+address+"','"+email+"','"+phone+"','"+payment+"')";
+        String sql = "INSERT INTO employee(ID,Name, Sector, Salary, Gender, Address, Email,Phone,Payment) "
+                + "VALUES('"+id+"','"+name+"','"+sector+"','"+salary+"','"+gender+"','"+address+"','"+email+"','"+phone+"','"+payment+"')";
         try {
 
             stmt = conn.createStatement();

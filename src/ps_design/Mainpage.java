@@ -40,7 +40,7 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         login = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Exit = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         Passwordtxt = new javax.swing.JPasswordField();
@@ -70,13 +70,13 @@ public class Mainpage extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(51, 0, 102));
-        jButton2.setText("Exit");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Exit.setBackground(new java.awt.Color(255, 255, 255));
+        Exit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Exit.setForeground(new java.awt.Color(51, 0, 102));
+        Exit.setText("Exit");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ExitActionPerformed(evt);
             }
         });
 
@@ -131,7 +131,7 @@ public class Mainpage extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(41, 41, 41))
         );
         jPanel2Layout.setVerticalGroup(
@@ -150,7 +150,7 @@ public class Mainpage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -179,10 +179,9 @@ public class Mainpage extends javax.swing.JFrame {
         Passwordtxt.setText("");
     }//GEN-LAST:event_resetActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ExitActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
@@ -217,21 +216,7 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_loginActionPerformed
 
     private void PasswordtxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordtxtKeyPressed
-        // TODO add your handling code here:
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            String password = Usernametxt.getText();
-            String username = Passwordtxt.getText();
 
-            if(password.contains("admin") && username.contains("admin") ){
-                new List().setVisible(true);
-                this.setVisible(false);
-            }
-            else{
-                JOptionPane.showMessageDialog(null,"Wrong username or password!!!!","INSERT",JOptionPane.WARNING_MESSAGE);
-                Usernametxt.setText("");
-                Passwordtxt.setText("");
-            }
-        }
     }//GEN-LAST:event_PasswordtxtKeyPressed
 
     /**
@@ -270,9 +255,9 @@ public class Mainpage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Exit;
     private javax.swing.JPasswordField Passwordtxt;
     private javax.swing.JTextField Usernametxt;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

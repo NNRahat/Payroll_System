@@ -72,7 +72,7 @@
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="reset" min="-2" pref="109" max="-2" attributes="0"/>
                           <EmptySpace pref="30" max="32767" attributes="0"/>
-                          <Component id="jButton2" min="-2" pref="109" max="-2" attributes="0"/>
+                          <Component id="Exit" min="-2" pref="109" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -97,7 +97,7 @@
                   <EmptySpace pref="75" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jButton2" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="Exit" min="-2" pref="53" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -145,7 +145,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="Exit">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -159,7 +159,7 @@
             <Property name="text" type="java.lang.String" value="Exit"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">

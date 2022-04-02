@@ -324,7 +324,8 @@ public class Update extends javax.swing.JFrame {
             String phone = phonetxt.getText();
             String payment = (String) paymentBar.getSelectedItem();
             
-            String qry = "update employee set Name='"+name+"',Sector='"+sector+"',Salary='"+salary+"',Gender='"+gender+"',Address='"+address+"',Email='"+email+"',Phone='"+phone+"',Payment='"+payment+"'   where ID="+iddrop.getSelectedItem();
+            String qry = "update employee set Name='"+name+"',Sector='"+sector+"',Salary='"+salary+"',Gender='"+gender+"',Address='"+address+"',"
+                    + "Email='"+email+"',Phone='"+phone+"',Payment='"+payment+"'   where ID="+iddrop.getSelectedItem();
        
             try{
                 conn c1 = new conn();
